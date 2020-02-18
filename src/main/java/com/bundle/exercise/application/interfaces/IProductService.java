@@ -1,8 +1,8 @@
 package com.bundle.exercise.application.interfaces;
 
-import com.bundle.exercise.domain.models.Product;
+import com.bundle.exercise.application.dto.ProductDto;
 
 public interface IProductService {
-    Product[] GetAll();
-    Product GetById(int id);
+    ProductDto[] GetAll();
+    ProductDto GetById(int id);
 }

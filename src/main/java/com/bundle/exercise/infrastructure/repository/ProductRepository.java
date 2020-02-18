@@ -1,4 +1,4 @@
-package com.bundle.exercise.infrastructure.Repository;
+package com.bundle.exercise.infrastructure.repository;
 
 import com.bundle.exercise.domain.interfaces.IProductRepository;
 import com.bundle.exercise.domain.models.Product;
@@ -22,15 +22,13 @@ public class ProductRepository implements IProductRepository {
 
     @Override
     public Product[] GetAll(){
-        Product[] products = restTemplate.getForObject(url, Product[].class);
 
-        return products;
+        return restTemplate.getForObject(url, Product[].class);
     }
 
     @Override
     public Product GetById(int id){
-        Product product = restTemplate.getForObject(url + id, Product.class);
 
-        return product;
+        return restTemplate.getForObject(url + id, Product.class);
     }
 }

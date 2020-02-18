@@ -1,4 +1,4 @@
-package com.bundle.exercise.infrastructure.Repository;
+package com.bundle.exercise.infrastructure.repository;
 
 import com.bundle.exercise.domain.interfaces.ISaleRepository;
 import com.bundle.exercise.domain.models.Sale;
@@ -22,13 +22,11 @@ public class SaleRepository implements ISaleRepository {
 
     @Override
     public Sale[] GetAll() {
-        Sale[] sales = restTemplate.getForObject(url, Sale[].class);
-        return sales;
+        return restTemplate.getForObject(url, Sale[].class);
     }
 
     @Override
     public Sale GetById(int id) {
-        Sale sale = restTemplate.getForObject(url + id, Sale.class);
-        return sale;
+        return restTemplate.getForObject(url + id, Sale.class);
     }
 }

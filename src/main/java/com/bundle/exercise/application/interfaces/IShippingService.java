@@ -1,8 +1,8 @@
 package com.bundle.exercise.application.interfaces;
 
-import com.bundle.exercise.domain.models.Shipping;
+import com.bundle.exercise.application.dto.ShippingDto;
 
 public interface IShippingService {
-    Shipping[] GetAll();
-    Shipping GetById(int id);
+    ShippingDto[] GetAll();
+    ShippingDto GetBySaleId(int id);
 }

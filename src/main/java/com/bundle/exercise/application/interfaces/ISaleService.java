@@ -1,8 +1,8 @@
 package com.bundle.exercise.application.interfaces;
 
-import com.bundle.exercise.domain.models.Sale;
+import com.bundle.exercise.application.dto.SaleDto;
 
 public interface ISaleService {
-    Sale[] GetAll();
-    Sale GetById(int id);
+    SaleDto[] GetAll();
+    SaleDto GetById(int id);
 }

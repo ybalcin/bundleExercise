@@ -1,4 +1,4 @@
-package com.bundle.exercise.infrastructure.Repository;
+package com.bundle.exercise.infrastructure.repository;
 
 import com.bundle.exercise.domain.interfaces.IShippingRepository;
 import com.bundle.exercise.domain.models.Shipping;
@@ -22,13 +22,11 @@ public class ShippingRepository implements IShippingRepository {
 
     @Override
     public Shipping[] GetAll() {
-        Shipping[] shipping = restTemplate.getForObject(url, Shipping[].class);
-        return shipping;
+        return restTemplate.getForObject(url, Shipping[].class);
     }
 
     @Override
     public Shipping GetBySaleId(int id) {
-        Shipping shipping = restTemplate.getForObject(url + id, Shipping.class);
-        return shipping;
+        return restTemplate.getForObject(url + id, Shipping.class);
     }
 }
