@@ -1,7 +1,7 @@
 package com.bundle.exercise.application.interfaces;
 
-import com.bundle.exercise.application.dto.ResponseDto;
+import com.bundle.exercise.application.dto.ShippingStatusDto;
 
 public interface IShippingStatusService {
-    ResponseDto GetShippingInformation(int saleId);
+    ShippingStatusDto GetShippingInformation(int saleId);
 }

@@ -2,8 +2,10 @@ package com.bundle.exercise;
 
 import com.bundle.exercise.application.dto.ProductDto;
 import com.bundle.exercise.application.dto.SaleDto;
+import com.bundle.exercise.application.dto.ShippingDto;
 import com.bundle.exercise.application.interfaces.IProductService;
 import com.bundle.exercise.application.interfaces.ISaleService;
+import com.bundle.exercise.application.interfaces.IShippingService;
 import com.bundle.exercise.application.interfaces.IShippingStatusService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,14 +20,18 @@ class ExerciseApplicationTests {
     private ISaleService saleService;
     @Autowired
     private IShippingStatusService shippingStatusService;
+    @Autowired
+    private IShippingService shippingService;
 
     @Test
     void contextLoads() {
-        ProductDto product = productService.GetById(1);
+        ProductDto product = productService.GetById(55);
         ProductDto[] products = productService.GetAll();
 
         SaleDto[] sales = saleService.GetAll();
         SaleDto sale = saleService.GetById(15);
+
+        ShippingDto shipping = shippingService.GetBySaleId(5);
 
         //ShippingStatusDto statusDto = shippingStatusService.GetShippingInformation(30);
     }

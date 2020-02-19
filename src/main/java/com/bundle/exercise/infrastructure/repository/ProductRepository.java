@@ -22,13 +22,11 @@ public class ProductRepository implements IProductRepository {
 
     @Override
     public Product[] GetAll(){
-
         return restTemplate.getForObject(url, Product[].class);
     }
 
     @Override
     public Product GetById(int id){
-
         return restTemplate.getForObject(url + id, Product.class);
     }
 }

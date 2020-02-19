@@ -1,11 +1,11 @@
 package com.bundle.exercise.application.dto;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class ShippingDto {
     private int saleId;
     private boolean status;
-    private Date createdDate;
+    private Date createdAt;
 
     public int getSaleId() {
         return saleId;
@@ -23,11 +23,11 @@ public class ShippingDto {
         this.status = status;
     }
 
-    public Date getCreatedDate() {
-        return createdDate;
+    public Date getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
     }
 }

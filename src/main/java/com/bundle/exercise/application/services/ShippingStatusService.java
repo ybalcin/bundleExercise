@@ -26,44 +26,17 @@ public class ShippingStatusService implements IShippingStatusService {
     }
 
     @Override
-    public ResponseDto GetShippingInformation(int saleId) {
-        ResponseDto responseDto = new ResponseDto();
-        responseDto.setResponseStatus(true);
-        responseDto.setMessage("success");
-        responseDto.setData(null);
-
-        ShippingDto shipping = new ShippingDto();
-        ProductDto product = new ProductDto();
-
-        SaleDto sale = null;
-        try {
-            sale = saleService.GetById(saleId);
-            if (sale == null) {
-                responseDto.setMessage("Satış bulunamadı.");
-            } else {
-                shipping = shippingService.GetBySaleId(sale.getId());
-                if (shipping == null) {
-                    responseDto.setMessage("Kargo durumu bulunamadı.");
-                    return responseDto;
-                }
-
-                product = productService.GetById(sale.getProductId());
-                if (product == null){
-                    responseDto.setMessage("Ürün bulunamadı.");
-                    return responseDto;
-                }
-            }
-        } catch (Exception e) {
-            responseDto.setMessage(e.getMessage());
-            responseDto.setResponseStatus(false);
-            return responseDto;
-        }
+    public ShippingStatusDto GetShippingInformation(int saleId) {
         ShippingStatusDto statusDto = new ShippingStatusDto();
+
+        SaleDto sale = saleService.GetById(saleId);
+        ShippingDto shipping = shippingService.GetBySaleId(sale.getId());
+        ProductDto product = productService.GetById(sale.getProductId());
+
         statusDto.setProduct(product);
         statusDto.setSale(sale);
         statusDto.setStatus(shipping.isStatus() ? "TESLİM EDİLDİ" : "TESLİM EDİLMEDİ");
-        responseDto.setData(statusDto);
 
-        return responseDto;
+        return statusDto;
     }
 }
