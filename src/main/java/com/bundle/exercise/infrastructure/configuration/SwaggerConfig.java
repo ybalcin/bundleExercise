@@ -22,9 +22,10 @@ import java.util.List;
 public class SwaggerConfig {
     @Bean
     public Docket api() {
-        return new Docket(DocumentationType.SWAGGER_2).select()
+        return new Docket(DocumentationType.SWAGGER_2)
+                .select()
                 .apis(RequestHandlerSelectors
-                        .basePackage("net.guides.springboot2.springboot2swagger2.controller"))
+                        .basePackage("com.bundle.exercise.presentation"))
                 .paths(PathSelectors.regex("/.*"))
                 .build().apiInfo(apiEndPointsInfo());
     }
