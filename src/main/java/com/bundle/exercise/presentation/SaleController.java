@@ -7,6 +7,7 @@ import com.bundle.exercise.application.interfaces.IShippingStatusService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @Api(value = "Sale Operations", description = "Sale Operations")
@@ -25,19 +26,22 @@ public class SaleController {
 
     @ApiOperation(value = "Shipping status", response = ShippingStatusDto.class)
     @GetMapping("/{id}/shipping")
-    public ShippingStatusDto Shipping(@PathVariable int id){
-        return statusService.GetShippingInformation(id);
+    public ResponseEntity<ShippingStatusDto> Shipping(@PathVariable int id) throws Exception {
+        ShippingStatusDto shippingStatus = statusService.GetShippingInformation(id);
+        return ResponseEntity.ok().body(shippingStatus);
     }
 
     @ApiOperation(value = "Sale detail", response = SaleDto.class)
     @GetMapping("/{id}")
-    public SaleDto Sale(@PathVariable int id){
-        return saleService.GetById(id);
+    public ResponseEntity<SaleDto> Sale(@PathVariable int id) throws Exception {
+        SaleDto sale = saleService.GetById(id);
+        return ResponseEntity.ok().body(sale);
     }
 
     @ApiOperation(value = "All sales", response = SaleDto[].class)
     @GetMapping
-    public SaleDto[] Sale(){
-        return saleService.GetAll();
+    public ResponseEntity<SaleDto[]> Sale() throws Exception {
+        SaleDto[] sales = saleService.GetAll();
+        return ResponseEntity.ok().body(sales);
     }
 }
