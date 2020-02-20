@@ -30,11 +30,8 @@ public class SwaggerConfig {
                 .build().apiInfo(apiEndPointsInfo());
     }
     private ApiInfo apiEndPointsInfo() {
-        return new ApiInfoBuilder().title("Spring Boot REST API")
-                .description("Sale Shipping REST API")
-                .license("Apache 2.0")
-                .licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html")
-                .version("1.0.0")
+        return new ApiInfoBuilder().title("Bundle Exercise REST API")
+                .version("v1")
                 .build();
     }
 

@@ -5,6 +5,7 @@ import com.bundle.exercise.domain.models.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.client.RestTemplate;
 
@@ -12,21 +13,23 @@ import org.springframework.web.client.RestTemplate;
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class ProductRepository implements IProductRepository {
     private final String url;
-    private final RestTemplate restTemplate;
+    private final RestTemplate _restTemplate;
+    private final Environment _env;
 
     @Autowired
-    public ProductRepository(RestTemplate restTemplate) {
-        this.url = "http://5e209e06e31c6e0014c60962.mockapi.io/api/products/";
-        this.restTemplate = restTemplate;
+    public ProductRepository(RestTemplate restTemplate, Environment env) {
+        this._env = env;
+        this._restTemplate = restTemplate;
+        this.url = String.format("%s/products/", _env.getProperty("app.resourceUrl"));
     }
 
     @Override
     public Product[] GetAll(){
-        return restTemplate.getForObject(url, Product[].class);
+        return _restTemplate.getForObject(url, Product[].class);
     }
 
     @Override
     public Product GetById(int id){
-        return restTemplate.getForObject(url + id, Product.class);
+        return _restTemplate.getForObject(url + id, Product.class);
     }
 }
