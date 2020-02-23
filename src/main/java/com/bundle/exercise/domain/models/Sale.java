@@ -8,15 +8,7 @@ public class Sale extends Base {
         return saleCode;
     }
 
-    public void setSaleCode(String saleCode) {
-        this.saleCode = saleCode;
-    }
-
     public int getProductId() {
         return productId;
-    }
-
-    public void setProductId(int productId) {
-        this.productId = productId;
     }
 }

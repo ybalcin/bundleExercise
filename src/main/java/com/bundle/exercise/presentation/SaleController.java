@@ -3,7 +3,7 @@ package com.bundle.exercise.presentation;
 import com.bundle.exercise.application.dto.SaleDto;
 import com.bundle.exercise.application.dto.ShippingStatusDto;
 import com.bundle.exercise.application.interfaces.ISaleService;
-import com.bundle.exercise.application.interfaces.IShippingStatusService;
+import com.bundle.exercise.application.interfaces.IShippingService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,20 +14,20 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/sale")
 public class SaleController {
-    private final IShippingStatusService statusService;
+    private final IShippingService shippingService;
     private final ISaleService saleService;
 
     @Autowired
     public SaleController
-            (IShippingStatusService shippingStatusService, ISaleService saleService) {
-        this.statusService = shippingStatusService;
+            (IShippingService shippingService, ISaleService saleService) {
+        this.shippingService = shippingService;
         this.saleService = saleService;
     }
 
     @ApiOperation(value = "Shipping status", response = ShippingStatusDto.class)
     @GetMapping("/{id}/shipping")
     public ResponseEntity<ShippingStatusDto> Shipping(@PathVariable int id) throws Exception {
-        ShippingStatusDto shippingStatus = statusService.GetShippingInformation(id);
+        ShippingStatusDto shippingStatus = shippingService.GetShippingStatus(id);
         return ResponseEntity.ok().body(shippingStatus);
     }
 

@@ -11,23 +11,11 @@ public class Shipping {
         return saleId;
     }
 
-    public void setSaleId(int saleId) {
-        this.saleId = saleId;
-    }
-
     public boolean isStatus() {
         return status;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
-
     public Date getCreatedAt() {
         return createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
     }
 }
