@@ -11,4 +11,12 @@ public class Sale extends Base {
     public int getProductId() {
         return productId;
     }
+
+    public void setSaleCode(String saleCode) {
+        this.saleCode = saleCode;
+    }
+
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
 }

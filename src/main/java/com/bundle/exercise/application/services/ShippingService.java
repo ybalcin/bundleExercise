@@ -51,9 +51,9 @@ public class ShippingService implements IShippingService {
 
         SaleDto sale = saleService.GetById(saleId);
         ShippingDto shipping = this.GetBySaleId(sale.getId());
-        //ProductDto product = productService.GetById(sale.getProductId());
+        ProductDto product = productService.GetById(sale.getProductId());
 
-        //statusDto.setProduct(product);
+        statusDto.setProduct(product);
         statusDto.setSale(sale);
         statusDto.setStatus(shipping.isStatus() ? "TESLİM EDİLDİ" : "TESLİM EDİLMEDİ");
 

@@ -16,27 +16,8 @@ import java.util.List;
 
 @SpringBootTest
 class ExerciseApplicationTests {
-
-    @Autowired
-    private IProductService productService;
-    @Autowired
-    private ISaleService saleService;
-    @Autowired
-    private IShippingService shippingService;
-    @Autowired
-    private ProductRepository productRepository;
-
     @Test
     void contextLoads() {
-/*        ProductDto product = productService.GetById(55);
-        ProductDto[] products = productService.GetAll();
-
-        SaleDto[] sales = saleService.GetAll();
-        SaleDto sale = saleService.GetById(15);
-
-        ShippingDto shipping = shippingService.GetBySaleId(5);*/
-
-        //ProductDto productDto = productService.GetById(4);
     }
 
 }

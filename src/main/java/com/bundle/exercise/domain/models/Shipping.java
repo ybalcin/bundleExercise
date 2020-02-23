@@ -18,4 +18,16 @@ public class Shipping {
     public Date getCreatedAt() {
         return createdAt;
     }
+
+    public void setSaleId(int saleId) {
+        this.saleId = saleId;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
 }
