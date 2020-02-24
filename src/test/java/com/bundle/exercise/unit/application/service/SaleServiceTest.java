@@ -1,4 +1,4 @@
-package com.bundle.exercise.unittest.application.service;
+package com.bundle.exercise.unit.application.service;
 
 import com.bundle.exercise.application.dto.SaleDto;
 import com.bundle.exercise.application.services.SaleService;
@@ -13,7 +13,6 @@ import org.modelmapper.ModelMapper;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest

@@ -26,21 +26,21 @@ public class SaleController {
 
     @ApiOperation(value = "Shipping status", response = ShippingStatusDto.class)
     @GetMapping("/{id}/shipping")
-    public ResponseEntity<ShippingStatusDto> Shipping(@PathVariable int id) throws Exception {
+    public ResponseEntity<ShippingStatusDto> Shipping(@PathVariable int id){
         ShippingStatusDto shippingStatus = shippingService.GetShippingStatus(id);
         return ResponseEntity.ok().body(shippingStatus);
     }
 
     @ApiOperation(value = "Sale detail", response = SaleDto.class)
     @GetMapping("/{id}")
-    public ResponseEntity<SaleDto> Sale(@PathVariable int id) throws Exception {
+    public ResponseEntity<SaleDto> Sale(@PathVariable int id){
         SaleDto sale = saleService.GetById(id);
         return ResponseEntity.ok().body(sale);
     }
 
     @ApiOperation(value = "All sales", response = SaleDto[].class)
     @GetMapping
-    public ResponseEntity<SaleDto[]> Sale() throws Exception {
+    public ResponseEntity<SaleDto[]> Sale(){
         SaleDto[] sales = saleService.GetAll();
         return ResponseEntity.ok().body(sales);
     }

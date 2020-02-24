@@ -1,9 +1,8 @@
-package com.bundle.exercise.unittest.infrastructure.repository;
+package com.bundle.exercise.unit.infrastructure.repository;
 
 import com.bundle.exercise.domain.models.Product;
 import com.bundle.exercise.infrastructure.repository.ProductRepository;
 import org.junit.Before;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;

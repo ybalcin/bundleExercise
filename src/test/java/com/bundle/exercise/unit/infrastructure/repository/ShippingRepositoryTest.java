@@ -1,4 +1,4 @@
-package com.bundle.exercise.unittest.infrastructure.repository;
+package com.bundle.exercise.unit.infrastructure.repository;
 
 import com.bundle.exercise.domain.models.Shipping;
 import com.bundle.exercise.infrastructure.repository.ShippingRepository;

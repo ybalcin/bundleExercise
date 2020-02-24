@@ -1,4 +1,4 @@
-package com.bundle.exercise.unittest.application.service;
+package com.bundle.exercise.unit.application.service;
 
 import com.bundle.exercise.application.dto.ProductDto;
 import com.bundle.exercise.application.dto.SaleDto;
@@ -8,8 +8,6 @@ import com.bundle.exercise.application.interfaces.IProductService;
 import com.bundle.exercise.application.interfaces.ISaleService;
 import com.bundle.exercise.application.services.ShippingService;
 import com.bundle.exercise.domain.interfaces.IShippingRepository;
-import com.bundle.exercise.domain.models.Product;
-import com.bundle.exercise.domain.models.Sale;
 import com.bundle.exercise.domain.models.Shipping;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
