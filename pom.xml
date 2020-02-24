@@ -11,6 +11,7 @@
     <groupId>com.bundle</groupId>
     <artifactId>exercise</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
     <name>exercise</name>
     <description>Demo project for Bundle</description>
 
